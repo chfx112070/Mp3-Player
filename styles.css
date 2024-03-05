@@ -1,0 +1,102 @@
+#featured-content {
+    position: relative; /* Add position relative */
+    height: 650px; /* Set a fixed height */
+}
+
+#featured-content::after {
+    content: ''; /* Add content for pseudo-element */
+    position: absolute; /* Position the pseudo-element */
+    top: -10px; /* Adjust the top position to overlap the border */
+    left: -10px; /* Adjust the left position to overlap the border */
+    right: -10px; /* Adjust the right position to overlap the border */
+    bottom: -10px; /* Adjust the bottom position to overlap the border */
+    z-index: -1; /* Set z-index to send the pseudo-element behind */
+    background-image: url('media/saltwater7996_Embark_on_a_journey_through_the_intersection_of_a_997f01c7-55b8-4336-808a-dbe6bfee94ad.png'); /* Set background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    filter: blur(100px); /* Add blur effect */
+}
+
+#featured-content > * {
+    position: relative; /* Ensure other content stays on top of the pseudo-element */
+    z-index: 1; /* Ensure other content stays on top of the pseudo-element */
+}
+
+.poster {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    max-width: 800px; /* Adjust as needed */
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for header */
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Additional styles for main content */
+main {
+    margin-bottom: 20px;
+}
+
+/* Additional styles for footer */
+footer {
+    text-align: center;
+}
+
+/* Additional styles for music player */
+#music-player {
+    text-align: center;
+}
+
+#music-player img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    filter: blur(10px); /* Adjust the blur radius as needed */
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.control-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    background-color: #555;
+}
