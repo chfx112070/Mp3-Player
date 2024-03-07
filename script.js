@@ -1,34 +1,74 @@
-// JavaScript code for music player interaction
-
-// Sample playlist data
 const playlist = [
-    { title: "Song 1", artist: "Artist 1", src: "song1.mp3" },
-    { title: "Song 2", artist: "Artist 2", src: "song2.mp3" },
-    // Add more songs as needed
+    { title: "禁じられた恋", artist: "DEPAPEPE", src: "media/DEPAPEPE - 禁じられた恋.mp3" },
+    { title: "Do For Love", artist: "2Pac", src: "media/2Pac - Do For Love.mp3" },
+    { title: "Viva la Vida", artist: "Coldplay", src: "media/Coldplay - Viva la Vida.mp3" },
+    { title: "Sunsetz", artist: "Cigarettes After Sex", src: "media/Cigarettes After Sex - Sunsetz.mp3" },
 ];
 
 const musicPlayer = document.getElementById('music-player');
+let currentSongIndex = 0;
 
-// Function to create the music player interface
 function createMusicPlayer() {
     const player = document.createElement('audio');
     player.controls = true;
-    player.src = playlist[0].src; // Set default song
     musicPlayer.appendChild(player);
 
-    // Display current track information
-    const trackInfo = document.createElement('div');
-    trackInfo.innerHTML = `Now Playing: ${playlist[0].title} - ${playlist[0].artist}`;
-    musicPlayer.appendChild(trackInfo);
+    const playlistContainer = document.createElement('div');
+    playlistContainer.classList.add('playlist');
+    musicPlayer.appendChild(playlistContainer);
 
-    // Event listener for track change
+    playlist.forEach((song, index) => {
+        const songElement = document.createElement('div');
+        songElement.classList.add('song');
+        songElement.textContent = `${index + 1}. ${song.title} - ${song.artist}`;
+        songElement.addEventListener('click', () => {
+            currentSongIndex = index;
+            playSong(song.src);
+            updateNowPlayingDisplay();
+        });
+        playlistContainer.appendChild(songElement);
+    });
+
     player.addEventListener('ended', () => {
-        const nextTrackIndex = (playlist.findIndex(song => song.src === player.src) + 1) % playlist.length;
-        player.src = playlist[nextTrackIndex].src;
-        trackInfo.innerHTML = `Now Playing: ${playlist[nextTrackIndex].title} - ${playlist[nextTrackIndex].artist}`;
-        player.play();
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        playSong(playlist[currentSongIndex].src);
+        updateNowPlayingDisplay();
+    });
+
+    updateNowPlayingDisplay();
+}
+
+function playSong(src) {
+    const player = document.querySelector('audio');
+    player.src = src;
+    player.play();
+}
+
+function updateNowPlayingDisplay() {
+    const songs = document.querySelectorAll('.song');
+    songs.forEach((song, index) => {
+        if (index === currentSongIndex) {
+            song.classList.add('playing');
+        } else {
+            song.classList.remove('playing');
+        }
     });
 }
 
-// Create the music player when the page loads
 document.addEventListener('DOMContentLoaded', createMusicPlayer);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const playerControls = document.querySelectorAll('.control-btn');
+
+    playerControls.forEach(control => {
+        control.addEventListener('click', function() {
+            // Enlarge the button
+            control.style.transform = 'scale(5)';
+
+            // Revert to original size after a delay
+            setTimeout(function() {
+                control.style.transform = 'scale(1)';
+            }, 200); // Adjust the delay as needed (200 milliseconds in this case)
+        });
+    });
+});

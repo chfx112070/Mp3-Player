@@ -1,51 +1,56 @@
 #featured-content {
-    position: relative; 
-    height: 650px; 
+    position: relative;
+    height: 650px;
 }
 
 #featured-content::after {
-    content: ''; 
-    position: absolute; 
-    top: -10px; 
-    left: -10px; 
-    right: -10px; 
-    bottom: -10px; 
-    z-index: -1; 
-    background-image: url('media/saltwater7996_Embark_on_a_journey_through_the_intersection_of_a_997f01c7-55b8-4336-808a-dbe6bfee94ad.png'); /* Set background image */
-    background-size: cover; 
-    background-position: center; 
-    filter: blur(100px); 
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+    background-image: url('media/saltwater7996_Embark_on_a_journey_through_the_intersection_of_a_997f01c7-55b8-4336-808a-dbe6bfee94ad.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(100px);
 }
 
-#featured-content > * {
-    position: relative; 
-    z-index: 1; 
+#featured-content>* {
+    position: relative;
+    z-index: 1;
 }
 
 .poster {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #000;
     color: #fff;
     padding: 20px;
-    max-width: 800px; 
+    max-width: 800px;
     width: 100%;
-    height: 100%;
+    height: 120%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-
 
 header {
     margin-bottom: 20px;
 }
 
 header h1 {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
 }
 
 nav ul {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     list-style-type: none;
     padding: 0;
 }
@@ -56,22 +61,20 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #c527da;
     text-decoration: none;
 }
-
 
 main {
     margin-bottom: 20px;
 }
 
-
 footer {
     text-align: center;
 }
 
-
 #music-player {
+    font-family: "Anta", sans-serif;
     text-align: center;
 }
 
@@ -79,7 +82,7 @@ footer {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
-    filter: blur(10px); 
+    filter: blur(10px);
 }
 
 .player-controls {
@@ -88,15 +91,29 @@ footer {
 }
 
 .control-btn {
-    background-color: #333;
-    color: #fff;
+    background-color: #b3101000;
+    color: #2b50f5;
     border: none;
     padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 18px;
+    margin: 0 15px;
+    font-size: 30px;
     cursor: pointer;
 }
 
 .control-btn:hover {
-    background-color: #555;
+    color: #c232cf;
+}
+
+.playlist {
+    font-family: "Anta", sans-serif;
+}
+
+.song.playing {
+    background-color: #f5e506e0;
+    background-size: 20px;
+    color: #000; 
+}
+
+#music-player {
+    background-color: rgba(0,0,0,0)
 }

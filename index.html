@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,45 +10,56 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         #featured-content {
-            border: 10px solid #f7efef; 
-            background-image: url('media/saltwater7996_Embark_on_a_journey_through_the_intersection_of_a_997f01c7-55b8-4336-808a-dbe6bfee94ad.png'); /* Set background image */
-            background-size: cover; 
-            background-position: center; 
-            height: 650px; 
+            border: 10px solid #f7efef;
+            background-image: url('media/saltwater7996_Embark_on_a_journey_through_the_intersection_of_a_997f01c7-55b8-4336-808a-dbe6bfee94ad.png');
+            background-size: cover;
+            background-position: center;
+            height: 650px;
         }
 
         #music-player img {
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-            filter: blur(10px); 
+            filter: blur(10px);
+        }
+
+        #playlist {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            overflow-y: auto;
+            max-height: 200px; 
+        }
+
+        #playlist li {
+            list-style: none;
+            margin-bottom: 5px;
         }
     </style>
 </head>
+
 <body>
     <div class="poster">
         <header>
-            <h1>Artificial Intelligence and Artistry</h1>
+            <h1>AI and Artistry</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
                     <li><a href="#">AI Art Projects</a></li>
-                    <li><a href="#">Resources</a></li>
                     <li><a href="#">Music</a></li>
-                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section id="featured-content">
-                
+
             </section>
             <section id="explore-ai-and-art">
-                
+
             </section>
             <section id="latest-news">
-                
+
             </section>
             <div id="music-player">
                 <div class="player-controls">
@@ -53,15 +67,20 @@
                     <button class="control-btn" id="play-pause-btn">&#9658;</button>
                     <button class="control-btn" id="next-btn">&#10095;</button>
                 </div>
-                <audio controls id="audio-player">
+                <ul id="playlist">
+                    Analysing vast data sets<br>
+                    Extending perception<br>
+                    Recovering lost cultural heritage<br>
                     
-                </audio>
+                </ul>
             </div>
+            
         </main>
         <footer>
-            
+
         </footer>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
