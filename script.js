@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     playerControls.forEach(control => {
         control.addEventListener('click', function() {
-            // Enlarge the button
+
             control.style.transform = 'scale(5)';
 
-            // Revert to original size after a delay
+
             setTimeout(function() {
                 control.style.transform = 'scale(1)';
-            }, 200); // Adjust the delay as needed (200 milliseconds in this case)
+            }, 200); 
         });
     });
 });
