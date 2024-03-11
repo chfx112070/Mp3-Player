@@ -69,6 +69,14 @@ main {
     margin-bottom: 20px;
 }
 
+body {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    list-style-type: none;
+    padding: 0;
+}
+
 footer {
     text-align: center;
 }
@@ -76,6 +84,17 @@ footer {
 #music-player {
     font-family: "Anta", sans-serif;
     text-align: center;
+    animation: rainbow-animation 2s infinite; 
+}
+
+@keyframes rainbow-animation {
+    0% { color: red; } 
+    16.666% { color: orange; } 
+    33.333% { color: yellow; } 
+    50% { color: green; } 
+    66.666% { color: blue; } 
+    83.333% { color: indigo; } 
+    100% { color: violet; } 
 }
 
 #music-player img {
@@ -92,7 +111,7 @@ footer {
 
 .control-btn {
     background-color: #b3101000;
-    color: #2b50f5;
+    color: #14e4ff;
     border: none;
     padding: 10px 20px;
     margin: 0 15px;
@@ -106,6 +125,7 @@ footer {
 
 .playlist {
     font-family: "Anta", sans-serif;
+    color:antiquewhite
 }
 
 .song.playing {
